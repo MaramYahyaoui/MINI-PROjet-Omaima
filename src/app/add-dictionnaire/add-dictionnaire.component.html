@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Dictionnaire :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Dictionnaire</label>
+        <input type="text" [(ngModel)]="newDictionnaire.idDictionnaire"
+        name="idDictionnaire" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Dictionnaire</label>
+        <input type="text"[(ngModel)]= "newDictionnaire.nomDictionnaire"
+        name="nomDictionnaire" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prix Dictionnaire</label>
+        <input type="number" [(ngModel)]= "newDictionnaire.prixDictionnaire"
+        name="prixDictionnaire" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+        <input type="date" [(ngModel)]= "newDictionnaire.dateCreation" name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Type</label>
+            <select class="form-control form-control-lg" id="idCat" name="idCat"[(ngModel)]="newIdCat">
+            <option *ngFor="let cat of types" [value]="cat.idCat" > {{cat.nomCat}} </option>
+            </select>
+            </div>
+        <div class="mt-2">
+        <button type="submit"(click)="addDictionnaire()" class="btn btn-info">Ajouter</button>
+        </div>
+        </form>
+        </div>    
